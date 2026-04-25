@@ -78,6 +78,26 @@ const server = http.createServer((req, res) => {
     });
   }
 
+  else if (url.startsWith('/movies/') && method === 'PUT') {
+    const id = parseInt(url.split('/')[2]);
+    parseBody(req, (body) => {
+      if (!body) {
+        return sendJSON(res, 400, { message: 'Invalid JSON body' });
+      }
+
+      const movies = readMovies();
+      const index = movies.findIndex(m => m.id === id);
+
+      if (index === -1) {
+        return sendJSON(res, 404, { message: 'Movie not found' });
+      }
+
+      movies[index] = { ...movies[index], ...body, id: movies[index].id };
+      writeMovies(movies);
+      sendJSON(res, 200, movies[index]);
+    });
+  }
+
   else if (url.startsWith('/movies/') && method === 'DELETE') {
     const id = parseInt(url.split('/')[2]);
     const movies = readMovies();
