@@ -14,5 +14,109 @@
     "year": 1999,
     "rating": 5,
     "review": "A revolutionary sci-fi film that questions the nature of reality."
+  },
+  {
+    "id": 3,
+    "title": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "year": 2008,
+    "rating": 5,
+    "review": "An intense superhero film elevated by Heath Ledger's iconic performance."
+  },
+  {
+    "id": 4,
+    "title": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "year": 1994,
+    "rating": 5,
+    "review": "A nonlinear crime classic with sharp dialogue and unforgettable characters."
+  },
+  {
+    "id": 5,
+    "title": "Forrest Gump",
+    "director": "Robert Zemeckis",
+    "year": 1994,
+    "rating": 4,
+    "review": "A heartwarming tale of an ordinary man living through extraordinary times."
+  },
+  {
+    "id": 6,
+    "title": "The Shawshank Redemption",
+    "director": "Frank Darabont",
+    "year": 1994,
+    "rating": 5,
+    "review": "A powerful story of hope and friendship inside a brutal prison."
+  },
+  {
+    "id": 7,
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "year": 2014,
+    "rating": 5,
+    "review": "A visually stunning and emotionally gripping space epic."
+  },
+  {
+    "id": 8,
+    "title": "Fight Club",
+    "director": "David Fincher",
+    "year": 1999,
+    "rating": 4,
+    "review": "A dark, thought-provoking film about identity and consumerism."
+  },
+  {
+    "id": 9,
+    "title": "The Godfather",
+    "director": "Francis Ford Coppola",
+    "year": 1972,
+    "rating": 5,
+    "review": "The definitive crime saga about family, power, and betrayal."
+  },
+  {
+    "id": 10,
+    "title": "Parasite",
+    "director": "Bong Joon-ho",
+    "year": 2019,
+    "rating": 5,
+    "review": "A brilliant social thriller with unexpected twists and sharp commentary."
+  },
+  {
+    "id": 11,
+    "title": "Spirited Away",
+    "director": "Hayao Miyazaki",
+    "year": 2001,
+    "rating": 5,
+    "review": "A magical animated journey into a world of spirits and wonder."
+  },
+  {
+    "id": 12,
+    "title": "The Silence of the Lambs",
+    "director": "Jonathan Demme",
+    "year": 1991,
+    "rating": 4,
+    "review": "A chilling psychological thriller with an unforgettable villain."
+  },
+  {
+    "id": 13,
+    "title": "Gladiator",
+    "director": "Ridley Scott",
+    "year": 2000,
+    "rating": 4,
+    "review": "An epic revenge story set in ancient Rome with stunning action."
+  },
+  {
+    "id": 14,
+    "title": "Inglourious Basterds",
+    "director": "Quentin Tarantino",
+    "year": 2009,
+    "rating": 4,
+    "review": "A bold alternate-history war film with unforgettable dialogue."
+  },
+  {
+    "id": 15,
+    "title": "The Grand Budapest Hotel",
+    "director": "Wes Anderson",
+    "year": 2014,
+    "rating": 4,
+    "review": "A visually delightful comedy with impeccable style and humor."
   }
 ]
