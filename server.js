@@ -19,7 +19,23 @@ const sendJSON = (res, statusCode, data) => {
   res.end(JSON.stringify(data));
 };
 
+const parseBody = (req, callback) => {
+  let body = '';
+  req.on('data', chunk => {
+    body += chunk.toString();
+  });
+  req.on('end', () => {
+    try {
+      callback(JSON.parse(body));
+    } catch {
+      callback(null);
+    }
+  });
+};
+
 const server = http.createServer((req, res) => {
+  console.log(`Received: ${req.method} ${req.url}`);
+  
   const url = req.url;
   const method = req.method;
 
@@ -38,6 +54,42 @@ const server = http.createServer((req, res) => {
     } else {
       sendJSON(res, 404, { message: 'Movie not found' });
     }
+  }
+
+  else if (url === '/movies' && method === 'POST') {
+    parseBody(req, (body) => {
+      if (!body) {
+        return sendJSON(res, 400, { message: 'Invalid JSON body' });
+      }
+
+      const movies = readMovies();
+      const newMovie = {
+        id: Date.now(),
+        title: body.title,
+        director: body.director,
+        year: body.year,
+        rating: body.rating,
+        review: body.review
+      };
+
+      movies.push(newMovie);
+      writeMovies(movies);
+      sendJSON(res, 201, newMovie);
+    });
+  }
+
+  else if (url.startsWith('/movies/') && method === 'DELETE') {
+    const id = parseInt(url.split('/')[2]);
+    const movies = readMovies();
+    const index = movies.findIndex(m => m.id === id);
+
+    if (index === -1) {
+      return sendJSON(res, 404, { message: 'Movie not found' });
+    }
+
+    const deleted = movies.splice(index, 1)[0];
+    writeMovies(movies);
+    sendJSON(res, 200, { message: 'Movie deleted', movie: deleted });
   }
 
   else {
